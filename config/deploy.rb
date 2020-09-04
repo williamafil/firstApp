@@ -26,6 +26,7 @@ set :puma_init_active_record, true  # Change to false when not using ActiveRecor
 
 # Default value for :linked_files is []
 set :linked_files, %w{
+  config/database.yml
   config/application.yml
   config/secrets.yml
   config/master.key
@@ -88,7 +89,8 @@ desc 'Upload to shared/config'
     upload! "config/nginx.conf",  "#{shared_path}/config/nginx.conf"
     upload! "config/master.key",  "#{shared_path}/config/master.key"
     # upload! "config/database.yml", "#{shared_path}/config/application.yml"  #-> option
-    # upload! "config/database.yml", "#{shared_path}/config/database.yml"  #-> option
+    # 把 database.yml 推上去 shared 目錄 （remember to link_file)
+    upload! "config/database.yml", "#{shared_path}/config/database.yml"  #-> option
     # upload! "config/secrets.yml",  "#{shared_path}/config/secrets.yml"   #-> option
     # upload! ".env",  "#{shared_path}/.env"                               #-> option
   end
