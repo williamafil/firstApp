@@ -22,6 +22,4 @@ test:
 
 production:
   <<: *default
-  adapter: postgresql
-  username: 'deploy'
-  password: 'fjeiefi!”#34'
+  database: db/production.sqlite3
