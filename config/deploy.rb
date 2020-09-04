@@ -2,7 +2,7 @@
 lock "~> 3.14.1"
 
 set :application, "firstApp"
-set :repo_url, "git@example.com:me/firstApp.git"
+set :repo_url, "git@github.com:williamafil/firstApp.git"
 
 set :user,            'deploy'
 set :puma_threads,    [4, 16]
